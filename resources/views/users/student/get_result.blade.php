@@ -24,7 +24,7 @@
         <div class="col-6 col-xl-6 mb-4 mb-xl-0">
             <div class="card" id="c_id">
                 <div class="card-body">
-                    <h3>No result found , <span class="text-primary" onclick="window.location.href='{{ url("user/exam_content") }}'">take test </span> first !</h3>
+                    <!-- <h3>No result found , <span class="text-primary" onclick="window.location.href='{{ url("user/exam_content") }}'">take test </span> first !</h3> -->
                 </div>
             </div>
         </div>

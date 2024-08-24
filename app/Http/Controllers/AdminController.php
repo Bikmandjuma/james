@@ -682,8 +682,39 @@ class AdminController extends Controller
         return redirect()->back()->with('success','My information updated well !');
     }
 
+    public function getPassFailList()
+    {
+        // Fetch all students with their results and exams
+        $students = User::with(['results.exam'])->get()->map(function ($user) {
+            // Calculate pass/fail for each result based on half of the total score
+            $user->pass_fail_status = $user->results->map(function ($result) use ($user) {
+                // Calculate half of the total score for the exam
+                $halfScore = $result->total_score / 2;
+                
+                // Determine pass/fail based on whether the score is above or below half of the total score
+                $status = $result->total_score >= $halfScore ? 'Pass' : 'Fail';
+                
+                return [
+                    'firstname' => $user->firstname,
+                    'lastname' => $user->lastname,
+                    'gender' => $user->gender,
+                    'email' => $user->email,
+                    'total_score' => $result->total_score,
+                    'status' => $status
+                ];
+            });
+
+            return $user;
+        });
+
+        return $students;
+    }
+
     function student_grade(){
-        return view('users.admin.student_grade');
+
+        $students = $this->getPassFailList();
+        return view('users.admin.student_grade', compact('students'));
+    
     }
 
 }

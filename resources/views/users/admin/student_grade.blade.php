@@ -12,111 +12,42 @@
         <div class="row">
          
             <div class="col-md-12 grid-margin stretch-card">
-
-                <!-- </div> -->
-              <div class="card" id="card_id">
-                <div class="card-body" >
-                  
-                  <h4 class="card-title text-center">All students data &nbsp; <span class="badge badge-info float-right" style="margin-top:-10px;">{{ $student_list_count }}</span> </h4>
-                  <div class="table-responsive">
-                    <table class="table table-striped text-center">
-                      <thead>
-                        <tr>
-                          <th>
-                            Image
-                          </th>
-                          <th>
-                            Firstname
-                          </th>
-                          <th>
-                            Lastname
-                          </th>
-                          <th>
-                            Gender
-                          </th>
-                          <th>
-                            Phone
-                          </th>
-                          <th>
-                            Email
-                          </th>
-                          <th>
-                            Province
-                          </th>
-                          <th>
-                            District
-                          </th>
-                          <th>
-                            Action
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        
-                        @foreach($student_list as $data)
-                          <tr>
-                            <td class="py-1">
-                              <img src="{{ URL::to('/') }}/style/images/user/{{ $data->image }}" alt="content's image" style="border:1px solid grey;" />
-                            </td>
-                            <td class="py-1">
-                              {{ $data->firstname }}
-                            </td>
-                            <td class="py-1">
-                              {{ $data->lastname }}
-                            </td>
-                            <td class="py-1">
-                              {{ $data->gender }}
-                            </td>
-                            <td class="py-1">
-                              {{ $data->phone }}
-                            </td>
-                            <td class="py-1">
-                              {{ $data->email }}
-                            </td>
-                            <td class="py-1">
-                              {{ $data->province }}
-                            </td>
-                            <td class="py-1">
-                              {{ $data->district }}
-                            </td>
-                            <td class="py-1">
-                              <?php
-                                $result=Result::all()->where('user_id',$data->id);
-                                $count_result=collect($result)->count();
-
-                                if($data->gender == "Male"){
-                                  $gender="He";
-                                }else{
-                                  $gender="She";
-                                }
-                              ?>
-                              
-                              @if($count_result == 0)
-                                <a href="#" class="btn btn-danger" onclick="return confirm('No result of {{ $data->firstname}} {{$data->lastname}} found in database ,ie:{{$gender}} is not doing exam yet !')">Not yet</a>
-                              @else
-                                <a href="{{ route('student_result',Crypt::encrypt($data->id)) }}" class="btn btn-info">Result</a>
-                              @endif
-                              
-                            </td>
-                          </tr>
+              <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Email</th>
+                        <th>Total Score</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(!empty($students) && $students->count())
+                        @foreach($students as $student)
+                            @if(!empty($student->pass_fail_status) && $student->pass_fail_status->count())
+                                @foreach($student->pass_fail_status as $result)
+                                    <tr>
+                                        <td>{{ $result['firstname'] }}</td>
+                                        <td>{{ $result['lastname'] }}</td>
+                                        <td>{{ $result['gender'] }}</td>
+                                        <td>{{ $result['email'] }}</td>
+                                        <td>{{ $result['total_score'] }}</td>
+                                        <td>{{ $result['status'] }}</td>
+                                    </tr>
+                                @endforeach
+                            @endif
                         @endforeach
+                    @else
+                        <tr>
+                            <td colspan="6">No students found.</td>
+                        </tr>
+                    @endif
+                </tbody>
+            </table>
 
-                          @if($student_list_count == 0)
-                            <tr>
-                              <td colspan="9" class="text-center">No data found in database</td>
-                            </tr> 
-                          @endif
-                      </tbody>
-                    </table>
-                  </div>
-
-                </div>
-                
-                <div class="text-center float-center" style="flex-column:center;justify-content-center;">{{ $student_list->links() }}</div>
-             
             </div>
-
-              
 
             </div>
         </div>
