@@ -95,7 +95,7 @@
                 <div class="col-6 col-xl-6 mb-4 mb-xl-0">
                   <div class="card" id="content_id_card">
                     <div class="card-body" onclick="window.location.href='{{route('get_content')}}'">
-                      Choose your preferred method of learning or mix and match to suit your style. At <b>RdaiS(Rwanda inclusive system)</b>, we make education accessible, flexible, and effective for everyone. Start your learning journey today!
+                      Choose your preferred method of learning or mix and match to suit your style. At <b>RdaiS(Rwanda inclusive connect)</b>, we make education accessible, flexible, and effective for everyone. Start your learning journey today!
                     </div>
                   </div>
                 </div>

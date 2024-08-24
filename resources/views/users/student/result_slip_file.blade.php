@@ -41,7 +41,7 @@
         <div class="float-left">
             <p>REPUBLIC OF RWANDA</p>
             <p>MINISTRY OF EDUCATION</p>
-            <p>RWANDA INCLUSIVE SYSTEM</p>
+            <p>RWANDA INCLUSIVE CONNECT</p>
         </div>
         <div class="float-right">
             <p>YEAR: {{ $current_year }}</p>
@@ -49,7 +49,7 @@
             <p>Name: {{ Auth::guard('user')->user()->firstname }} {{ Auth::guard('user')->user()->lastname }}</p>
         </div>
         <br>
-        <p><b>www.rwandainclusivesystem.com</b></p>
+        <p><b>www.rwandainclusiveconnect.com</b></p>
         <p><b>F.A </b>: formative assessment</p>
     </div>
 

@@ -26,7 +26,7 @@
                             <ul style="list-style-type:square;font-weight:bold;">
                                 <li>REPUBLIC OF RWANDA</li>
                                 <li>MINISTRY OF EDUCATION</li>
-                                <li>RWANDA INCLUSIVE SYSTEM</li>
+                                <li>RWANDA INCLUSIVE CONNECT</li>
                             </ul>
                         </div>
                         <div class="col-6 col-xl-6 mb-4 mb-xl-0">
@@ -38,7 +38,7 @@
                         </div>
                     </div>
 
-                    <p><b>www.rwandainclusivesystem.com</b></p>
+                    <p><b>www.rwandainclusiveconnect.com</b></p>
                     <p><b>F.A </b>: formative assessment</p>
                     <div class="col-12 col-xl-12 mb-4 mb-xl-0">
                         
