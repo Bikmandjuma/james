@@ -724,11 +724,7 @@ class AdminController extends Controller
 
     public function downloadResultsPdf()
     {
-        $students = $this->getPassFailList();
-
-        // Generate PDF
-        // $pdf = PDF::loadView('users.student.certificate', $data);
-        // return $pdf->download('certificate.pdf'); 
+        $students = $this->getPassFailList(); 
 
         $pdf = PDF::loadView('users.admin.results_grade_pdf',compact('students'));
         return $pdf->download('certificate.pdf'); 
