@@ -22,7 +22,7 @@
                                 <th>Last Name</th>
                                 <th>Gender</th>
                                 <th>Email</th>
-                                <th>Total Score</th>
+                                <th>Score / %</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
