@@ -43,7 +43,7 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <!-- <a class="navbar-brand brand-logo mr-5" href="#"><img src="{{URL::to('/')}}/style/images/logo.png" class="mr-2" alt="logo"/></a> -->
-        <img class="img-fluid p-1" src="{{ URL::to('/') }}/homePage/img/logo.jpeg" alt="" width="200" height="35"> 
+        <img class="img-fluid p-1" src="{{ URL::to('/') }}/homePage/img/logo.jpeg" alt="" width="200" height="40"> 
         
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">

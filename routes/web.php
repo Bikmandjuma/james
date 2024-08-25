@@ -62,6 +62,9 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function(){
     Route::get('get_singleOption_byQuestion/{question_id}/{exam_id}/{course_name}',[AdminController::class,'get_singleOption_byQuestion'])->name('get_option_byQuestion_name');
     Route::post('edit/information',[AdminController::class,'editAdminInfo'])->name('EditAdminInfo');
     Route::get('student/grade',[AdminController::class,'student_grade'])->name('student_grade');
+
+    Route::get('/results/pdf', [AdminController::class, 'downloadResultsPdf'])->name('get_pdf_file_grade');
+
 });
 
 //routes codes of user/students

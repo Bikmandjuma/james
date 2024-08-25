@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\DB;
 use App\Mail\SheikhVerifyEmail;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Carbon;
+use Barryvdh\Snappy\Facades\SnappyPdf as PDF;
 
 class AdminController extends Controller
 {
@@ -719,6 +720,17 @@ class AdminController extends Controller
         $students = $this->getPassFailList();
         return view('users.admin.student_grade', compact('students'));
     
+    }
+
+    public function downloadResultsPdf()
+    {
+        $students = $this->getPassFailList();
+
+        // Generate PDF
+        $pdf = PDF::loadView('users.admin.results_grade_pdf', compact('students'));
+
+        // Download PDF
+        return $pdf->download('results.pdf');
     }
 
 }

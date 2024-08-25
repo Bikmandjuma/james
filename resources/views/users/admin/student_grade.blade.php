@@ -49,7 +49,7 @@
                                         @endforeach
                                     @endif
                                 @endforeach
-                                <button class="btn btn-primary mb-2 float-right d-flex align-items-center">
+                                <button class="btn btn-primary mb-2 float-right d-flex align-items-center" onclick="window.location.href='{{ route("get_pdf_file_grade") }}'">
                                     <i class="mdi mdi-download" style="margin-right: 8px;"></i>
                                     Generate pdf file
                                 </button>
